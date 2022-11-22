@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 
-const PostPage = ({ posts, handleDelete }) => {
+const PostPage = ({ posts, }) => {
     const { id } = useParams();
     const post = posts.find(post => (post.id).toString() === id);
 
@@ -16,9 +16,9 @@ const PostPage = ({ posts, handleDelete }) => {
 
                         <p className="postBody">{post.body}</p>
 
-                        <button onClick={() => handleDelete(post.id)}>
+                        {/* <button onClick={() => handleDelete(post.id)}>
 
-                        </button>
+                        </button> */}
                         <p>
 
                             <Link to='/'>Back to Homepage</Link>
@@ -30,8 +30,10 @@ const PostPage = ({ posts, handleDelete }) => {
 
                 {!post &&
                     <>
-                        <h2>Post Not Found</h2>
-                        <p>Well, that's disappointing.</p>
+                        <h2>Page Not Found(404)Error</h2>
+                        <p>We Apologize for the inconvenience.</p>
+                        <p> Please call our advisory services toll free on </p>
+                        <h3 style={{ color: "blue" }}>0800-700-200</h3>
                         <p>
                             <Link to='/'>Visit Our Homepage</Link>
                         </p>

@@ -1,12 +1,20 @@
 import React from 'react'
 
 const NewRequest = ({
-    handleSubmit, requestTitle, setRequestTitle, requestBody, setRequestBody
+    handleSubmit, fullName, setFullName, requestTitle, setRequestTitle, requestBody, setRequestBody
 }) => {
     return (
         <main className="NewRequest">
             <h2>New Request</h2>
             <form className="newRequestForm" onSubmit={handleSubmit}>
+                <label htmlFor="fullname">Fullname:</label>
+                <input
+                    id="fullName"
+                    type="text"
+                    required
+                    value={requestTitle}
+                    onChange={(e) => setFullName(e.target.value)}
+                />
                 <label htmlFor="requestTitle">Request Title:</label>
                 <input
                     id="requestTitle"
@@ -22,7 +30,7 @@ const NewRequest = ({
                     value={requestBody}
                     onChange={(e) => setRequestBody(e.target.value)}
                 />
-                <button type="submit">Submit</button>
+                <button type="submit request">Submit</button>
             </form>
         </main>
     )

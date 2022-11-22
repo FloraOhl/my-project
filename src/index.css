@@ -1,3 +1,19 @@
+button {
+  height: 48px;
+  min-width: 50px;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: rgba(52, 195, 133, 0.822);
+  color: #fff;
+  cursor: pointer;
+  margin-left: 0.8rem;
+}
+
+
+
+
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 * {
@@ -209,8 +225,8 @@ body {
 }
 
 .RequestPage button {
-  height: 48px;
-  min-width: 48px;
+  height: 50px;
+  min-width: 50px;
   border-radius: 0.25rem;
   padding: 0.5rem;
   font-size: 1rem;
@@ -261,7 +277,7 @@ body {
   }
 
   .newRequestForm textarea {
-    height: 300px;
+    height: 00px;
   }
 }
 

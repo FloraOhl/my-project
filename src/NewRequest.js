@@ -7,7 +7,7 @@ const NewRequest = ({
         <main className="NewRequest">
             <h2>New Request</h2>
             <form className="newRequestForm" onSubmit={handleSubmit}>
-                <label htmlFor="requestTitle">Title:</label>
+                <label htmlFor="requestTitle">Request Title:</label>
                 <input
                     id="requestTitle"
                     type="text"
@@ -15,7 +15,7 @@ const NewRequest = ({
                     value={requestTitle}
                     onChange={(e) => setRequestTitle(e.target.value)}
                 />
-                <label htmlFor="requestBody">Request:</label>
+                <label htmlFor="requestBody">Request Description:</label>
                 <textarea
                     id="requestBody"
                     required

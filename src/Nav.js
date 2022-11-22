@@ -5,10 +5,11 @@ const Nav = ({ search, setSearch }) => {
         <nav className="Nav">
             <ul>
                 <li><Link to="/">Home</Link></li>
-                <li><Link to="post">Request Support</Link></li>
                 <li><Link to="about">About</Link></li>
-                <li><Link to="signup">Signup</Link></li>
-                <li><Link to="login">Login</Link></li>
+                <li><Link to="post">Request Support</Link></li>
+                <li><Link to="Donate">Donate</Link></li>
+
+
             </ul>
             <form className="searchForm" onSubmit={(e) => e.preventDefault()}>
                 <label htmlFor="search">Search </label>

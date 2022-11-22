@@ -6,31 +6,39 @@ import About from './About';
 import Missing from './Missing';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { format } from 'date-fns';
+
+
 
 function App() {
   const [posts, setPosts] = useState([
     {
+      id: 4,
+      title: "Social Security",
+      body: "including consultations, applications,use of cultural mediators with migration background to Aassist espeacially in matters of family reunifaication ",
+    },
+    {
+      id: 4,
+      title: "Legal & Counselling Services",
+      body: "including consultations, applications,use of cultural mediators with migration background to Aassist espeacially in matters of family reunifaication ",
+    },
+    {
       id: 1,
-      title: "Our Migrant-friendly services",
-      body: "Act now ,step up and join us give people back their dignity and respect",
+      title: "Health Services",
+      body: "Covid-19 saw so many migrants not access health services or are neglected and lack the necessary data information. They struggle with navigating the complex administration systems and  fear they will be deported!"
 
     },
     {
       id: 2,
+      title: "Education & Trainings",
+      body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis consequatur expedita, assumenda similique non optio! Modi nesciunt excepturi corrupti atque blanditiis quo nobis, non optio quae possimus illum exercitationem ipsa!"
+    },
+
+    {
+      id: 3,
       title: "Housing",
       body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis consequatur expedita, assumenda similique non optio! Modi nesciunt excepturi corrupti atque blanditiis quo nobis, non optio quae possimus illum exercitationem ipsa!"
     },
-    {
-      id: 3,
-      title: "Health",
-      body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis consequatur expedita, assumenda similique non optio! Modi nesciunt excepturi corrupti atque blanditiis quo nobis, non optio quae possimus illum exercitationem ipsa!"
-    },
-    {
-      id: 4,
-      title: "Education",
-      body: "Empowering migrants , protect them . Quis consequatur expedita, assumenda similique non optio! Modi nesciunt excepturi corrupti atque blanditiis quo nobis, non optio quae possimus illum exercitationem ipsa!"
-    }
+
   ])
   const [search, setSearch] = useState('');
   const [searchResults, setSearchResults] = useState([]);
@@ -49,8 +57,7 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const id = posts.length ? posts[posts.length - 1].id + 1 : 1;
-    const datetime = format(new Date(), 'MMMM dd, yyyy pp');
-    const newPost = { id, title: postTitle, datetime, body: postBody };
+    const newPost = { id, title: postTitle, body: postBody };
     const allPosts = [...posts, newPost];
     setPosts(allPosts);
     setPostTitle('');

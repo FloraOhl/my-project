@@ -16,7 +16,7 @@ const Nav = ({ search, setSearch }) => {
                 <input
                     id="search"
                     type="text"
-                    placeholder="Search "
+                    placeholder="Search Services"
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
                 />

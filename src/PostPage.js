@@ -1,4 +1,6 @@
 import { useParams, Link } from "react-router-dom";
+import { FaPlus } from 'react-icons/fa';
+import 'bootstrap/dist/css/bootstrap.css'
 
 const PostPage = ({ posts, }) => {
     const { id } = useParams();
@@ -8,13 +10,19 @@ const PostPage = ({ posts, }) => {
         <main className="PostPage">
 
             <article className="post">
-                <img src="images/Freedom.jpg" className="chains" alt="" />
+
                 {post &&
 
                     <>
                         <h2>{post.title}</h2>
 
                         <p className="postBody">{post.body}</p>
+
+
+                        <button className="btn btn-primary mt-3 mx-1" type="submit">Request Support</button>
+                        <button className="btn btn-primary mt-3 mx-1" type="submit">Edit Request</button>
+
+
 
                         {/* <button onClick={() => handleDelete(post.id)}>
 

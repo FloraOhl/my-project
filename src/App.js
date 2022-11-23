@@ -1,4 +1,5 @@
 import Layout from './Layout';
+import Donate from './Donate';
 import Home from './Home';
 import NewRequest from './NewRequest';
 import PostPage from './PostPage';
@@ -93,6 +94,7 @@ function App() {
         </Route>
         <Route path="about" element={<About />} />
         <Route path="*" element={<Missing />} />
+        <Route path='/donate' element={<Donate />} />
       </Route>
     </Routes>
   );

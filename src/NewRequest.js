@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const NewRequest = ({
     handleSubmit, fullName, setFullName, requestTitle, setRequestTitle, requestBody, setRequestBody
@@ -30,7 +31,13 @@ const NewRequest = ({
                     value={requestBody}
                     onChange={(e) => setRequestBody(e.target.value)}
                 />
-                <button type="submit request">Submit</button>
+                <button onClick={() => window.location = 'mailto:yourmail@domain.com'}>Click to email REQUEST</button>
+                <Link to='javascript:void(0)'
+                    onClick={() => window.location = 'mailto:yourmail@domain.com'}>
+                    Contact US
+                </Link>
+                <img src="images/Envelop.jpg" className="chains" alt="" />
+
             </form>
         </main>
     )

@@ -18,7 +18,7 @@ function App() {
       body: "including consultations, applications,use of cultural mediators with migration background to Aassist espeacially in matters of family reunifaication ",
     },
     {
-      id: 4,
+      id: 3,
       title: "Legal & Counselling Services",
       body: "including consultations, applications,use of cultural mediators with migration background to Aassist espeacially in matters of family reunifaication ",
     },
@@ -94,6 +94,8 @@ function App() {
         </Route>
         <Route path="about" element={<About />} />
         <Route path="*" element={<Missing />} />
+        <Route path="donate" element={<Donate />} />
+
       </Route>
     </Routes>
   );

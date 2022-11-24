@@ -9,7 +9,6 @@ const Nav = ({ search, setSearch }) => {
                 <li><Link to="post">Request Support</Link></li>
                 <li><Link to="Donate">Donate</Link></li>
 
-
             </ul>
             <form className="searchForm" onSubmit={(e) => e.preventDefault()}>
                 <label htmlFor="search">Search </label>

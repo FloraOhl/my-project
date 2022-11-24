@@ -1,106 +1,105 @@
-<b>Flora Ohlsen</b>
-//                                         <span className=" text">**** 8880</span>
-//                                     </p>
-//                                 </div>
-//                             </div>
-//                             <div className="pt-9">
-//                                 <div className="d-flex flex-row pb-9">
-
-//                                 </div>
-//                             </div>
-//                             <div className="d-flex flex-row pb-9">
-//                                 <div className="rounded border d-flex w-100 px-3 py-2 align-items-center">
-//                                     <div className="d-flex align-items-center pe-3">
-//                                         <MDBRadio name="radioNoLabelX" id="radioNoLabel11" />
-//                                     </div>
-//                                     <div className="d-flex flex-column py-10">
-//                                         <p className="mb-1 small text-primary">Choose amount</p>
-//                                         <div className="d-flex flex-row align-items-center">
-//                                             <h6 className="mb-0 text-primary pe-1">€</h6>
-//                                             <MDBInput
-//                                                 id="typeNumber"
-//                                                 type="number"
-//                                                 size="lg"
-//                                                 style={{ width: "100px" }}
-//                                             />
-//                                         </div>
-//                                     </div>
-//                                 </div>
-
-//                             </div>
-//                             <div className="d-flex justify-content-bottom align-items-bottom pb-0">
-//                                 <br />
-//                                 <a href="#!" className="text">
-
-//                                 </a>
-//                                 <br />
-
-
-//                                 <button><Link to='/'>Pay</Link>
-//                                 </button>
-
-//                             </div>
-//                         </MDBCardBody>
-//                     </MDBCard>
-
-//                     <br />
-//                 </MDBCol>
-//                 <br />
-
-//             </MDBRow>
-//             <center><h3> THANK YOU</h3></center>
-//             <h5>Security of your payment information</h5>
-//             <p>
-//                 We understand that payment services online involves a lot of trust on your part. We take your trust seriously, and we make the security and confidentiality of your information our highest priority.</p>
-//             {/* <img src="images/Thx.jpg" className="thx" alt="" /><img src="images/Thx.jpg" className="thx" alt="" /><img src="images/Thx.jpg" className="thx" alt="" /><img src="images/Thx.jpg" className="thx" alt="" /><img src="images/Thx.jpg" className="thx" alt="" /> */}
-
-
-//         </MDBContainer>
-//     );
-// }
 import React from 'react';
-import Cards from 'react-credit-cards';
+import { Formik, Form } from 'formik';
+import * as Yup from 'yup';
+import { Link } from 'react-router-dom';
 
-export default class PaymentForm extends React.Component {
-    state = {
-        cvc: '',
-        expiry: '',
-        focus: '',
-        name: '',
-        number: '',
-    };
 
-    handleInputFocus = (e) => {
-        this.setState({ focus: e.target.name });
-    }
+const Donate = () => {
+    const validate = Yup.object({
+        fullName: Yup.string().min(3, 'Must be 15 characters or less').max(15, 'Must be 15 characters or less')
+            .required('Required'),
+        username: Yup.string().max(20, 'Must be 20 characters or less').required('Required'),
+        email: Yup.string().email('Email is invalid').required('Email is required'),
+        password: Yup.string().min(6, 'Password must be at least 6 charaters').required('Password is required'),
+        confirmPassword: Yup.string().oneOf([Yup.ref('password'), null], 'Password must match').required('Confirm password is required'),
+    })
 
-    handleInputChange = (e) => {
-        const { name, value } = e.target;
+    return (
+        <Formik
+            initialValues={{
+                firstName: '',
+                lastName: '',
+                email: '',
+                password: '',
+                confirmPassword: ''
+            }}
+            validationSchema={validate}
+            onSubmit={values => {
+                console.log(values)
+            }}
+        >
+            {formik => (
+                <div>
+                    <h1 className="my-4 font-weight-bold .display-4">Donate</h1>
+                    <Form>
+                        <ul>
+                            <input
+                                id="Amount"
+                                class="form-field"
+                                type="number"
+                                placeholder="Amount"
+                                name="Amount"
+                            />
+                        </ul>
 
-        this.setState({ [name]: value });
-    }
+                        <ul><input
+                            id="Card Number"
+                            class="form-field"
+                            type="text"
+                            placeholder="Card Number"
+                            name="card number"
+                        />
+                        </ul>
+                        <ul><input
+                            id="Expiry date"
+                            class="form-field"
+                            type="text"
+                            placeholder="Expiry Date"
+                            name="Valid Thru"
+                        />
+                        </ul>
+                        <ul><input
+                            id="CVC"
+                            class="form-field"
+                            type="number"
+                            placeholder="CVC"
+                            name="cvc"
+                        />
+                        </ul>
 
-    render() {
-        return (
-            <div id="PaymentForm">
-                <Cards
-                    cvc={this.state.cvc}
-                    expiry={this.state.expiry}
-                    focused={this.state.focus}
-                    name={this.state.name}
-                    number={this.state.number}
-                />
-                <form>
-                    <input
-                        type="tel"
-                        name="number"
-                        placeholder="Card Number"
-                        onChange={this.handleInputChange}
-                        onFocus={this.handleInputFocus}
-                    />
-                    ...
-                </form>
-            </div>
-        );
-    }
+                        <ul><input
+                            id="Card Owner"
+                            class="form-field"
+                            type="Card Owner"
+                            placeholder="Card Owner"
+                            name="Card Owner"
+                        />
+                        </ul>
+
+                        {/* <center><button className="btn btn-dark mt-3" type="submit">Donate</button></center> */}
+
+                        {/* <button className="btn btn-danger mt-3 ml-3" type="reset">Reset</button> */}
+
+                        {/* <a href="paypal.me/WIT432" target="_blank" rel="noreferrer">
+                            <button>Click</button>
+                        </a> */}
+
+                        <div>
+                            <center>  <Link to='https://www.paypal.com/signin'>
+                                <button type="button" className="btn btn-info"><Link to='/'>Donate</Link></button>
+                            </Link></center>
+                            <center><img src="images/thx.jpg" className="chains" alt="" /></center>
+                        </div>
+
+
+                    </Form>
+                </div>
+            )
+            }
+
+        </Formik >
+
+    )
 }
+
+export default Donate

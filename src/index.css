@@ -11,11 +11,6 @@ button {
 }
 
 
-
-
-
-
-
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 * {
@@ -32,7 +27,7 @@ body {
   min-height: 100vh;
   font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
-  /* -moz-osx-font-smoothing: grayscale; */
+  -moz-osx-font-smoothing: grayscale;
   display: flex;
   background-color: #efefef;
 }
@@ -54,12 +49,13 @@ body {
   align-items: center;
   border: 1px solid #333;
   box-shadow: 0px 0px 15px white;
+
 }
 
 .Header,
 .Footer {
   width: 100%;
-  /* background-color: #898f91; */
+  background-color: #e491dd;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
@@ -83,7 +79,7 @@ body {
 
 .Nav {
   width: 100%;
-  /* background-color: rgb(161, 139, 139); */
+  background-color: rgb(125, 118, 160);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -123,28 +119,28 @@ body {
   padding: 1rem;
 }
 
-/* .Nav li:hover,
+.Nav li:hover,
 .Nav li:focus {
   padding: 1rem;
-} */
+}
 
 .Nav li a {
   color: black;
   text-decoration: none;
 }
 
-/* .Nav li:hover,
+.Nav li:hover,
 .Nav li:focus,
 .Nav li:hover a,
 .Nav li:focus a {
   background-color: #eee;
   color: white;
-} */
+}
 
-/* * .Nav li:hover a,
+*/ * .Nav li:hover a,
 .Nav li:focus a {
   cursor: pointer;
-} */
+}
 
 .Home,
 .NewRequest,
@@ -228,16 +224,16 @@ body {
   margin-bottom: 1rem;
 }
 
-/* .RequestPage button {
+.RequestPage button {
   height: 50px;
   min-width: 50px;
   border-radius: 0.25rem;
   padding: 0.5rem;
   font-size: 1rem;
   background-color: red;
-  color: #fff;
+  color: rgb(207, 136, 136);
   cursor: pointer;
-} */
+}
 
 
 @media only screen and (min-width: 610px) {
@@ -260,13 +256,13 @@ body {
     text-align: right;
   }
 
-  /* .Nav li:hover,
+  .Nav li:hover,
   .Nav li:focus,
   .Nav li:hover a,
   .Nav li:focus a {
     background-color: rgb(223, 173, 173);
     color: rgb(19, 5, 5);
-  } */
+  }
 
   .searchForm {
     width: 50%;

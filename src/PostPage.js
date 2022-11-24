@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { FaPlus } from 'react-icons/fa';
+// import { FaPlus } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.css'
 
 const PostPage = ({ posts, }) => {
@@ -19,14 +19,30 @@ const PostPage = ({ posts, }) => {
                         <p className="postBody">{post.body}</p>
 
 
-                        <button className="btn btn-primary mt-3 mx-1" type="submit">Request Support</button>
-                        <button className="btn btn-primary mt-3 mx-1" type="submit">Edit Request</button>
+
+                        {/* <button><Link to='javascript:void(0)'
+                            onClick={() => window.location = 'mailto:yourmail@domain.com'}>
+                            Request Support
+                        </Link></button> */}
 
 
 
                         {/* <button onClick={() => handleDelete(post.id)}>
 
                         </button> */}
+                        <br></br>
+                        <br></br>
+                        <ul>
+                            <li>☏ call 0800-200-200</li>
+                            <li>☏<Link to='javascript:void(0)'
+                                onClick={() => window.location = 'mailto:yourmail@domain.com'}>
+                                Email
+                            </Link></li>
+                            <li>☏ visit our office ǀ  FREEDOMǀ  Valeska-Gert-Straße 5,ǀ 10243 Berlin! </li>
+                        </ul>
+
+                        <br></br>
+
                         <p>
 
                             <Link to='/'>Back to Homepage</Link>

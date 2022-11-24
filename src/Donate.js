@@ -1,91 +1,106 @@
-// import React from "react";
-import { MDBValidation } from 'mdb-react-ui-kit';
-import {
-    MDBBtn,
-    MDBCard,
-    MDBCardBody,
-    MDBCol,
-    MDBContainer,
-    MDBIcon,
-    MDBInput,
-    MDBRadio,
-    MDBRow,
-} from "mdb-react-ui-kit";
+<b>Flora Ohlsen</b>
+//                                         <span className=" text">**** 8880</span>
+//                                     </p>
+//                                 </div>
+//                             </div>
+//                             <div className="pt-9">
+//                                 <div className="d-flex flex-row pb-9">
 
-export default function App() {
-    return (
-        <MDBContainer fluid className="py-5" style={{ backgroundColor: "#eee" }}>
-            <MDBRow className="d-flex justify-content-center">
-                <MDBCol md="8" lg="6" xl="4">
-                    <MDBCard className="rounded-3">
-                        <MDBCardBody className="mx-1 my-2">
-                            <div className="d-flex align-items-center">
-                                <div>
-                                    <MDBIcon
-                                        fab
-                                        icon="cc-visa"
-                                        size="4x"
-                                        className="text-black pe-3"
-                                    />
-                                </div>
-                                <div>
-                                    <p className="d-flex flex-column mb-0">
-                                        <b>Martina Thomas</b>
-                                        <span className="small text-muted">**** 8880</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="pt-3">
-                                <div className="d-flex flex-row pb-3">
-                                    <div
-                                        className="rounded border border-primary border-2 d-flex w-100 p-3 align-items-center"
-                                        style={{ backgroundColor: "rgba(18, 101, 241, 0.07)" }}
-                                    >
-                                        <div className="d-flex align-items-center pe-3">
-                                            <MDBRadio
-                                                name="radioNoLabelX"
-                                                id="radioNoLabel11"
-                                                defaultChecked
-                                            />
-                                        </div>
-                                        <div className="d-flex flex-column">
-                                            <p className="mb-1 small text-primary">
-                                                Total amount due
-                                            </p>
-                                            <h6 className="mb-0 text-primary">$8245</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="d-flex flex-row pb-3">
-                                <div className="rounded border d-flex w-100 px-3 py-2 align-items-center">
-                                    <div className="d-flex align-items-center pe-3">
-                                        <MDBRadio name="radioNoLabelX" id="radioNoLabel11" />
-                                    </div>
-                                    <div className="d-flex flex-column py-1">
-                                        <p className="mb-1 small text-primary">Other amount</p>
-                                        <div className="d-flex flex-row align-items-center">
-                                            <h6 className="mb-0 text-primary pe-1">$</h6>
-                                            <MDBInput
-                                                id="typeNumber"
-                                                type="number"
-                                                size="sm"
-                                                style={{ width: "55px" }}
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="d-flex justify-content-between align-items-center pb-1">
-                                <a href="#!" className="text-muted">
-                                    Go back
-                                </a>
-                                <MDBBtn size="lg">Pay amount</MDBBtn>
-                            </div>
-                        </MDBCardBody>
-                    </MDBCard>
-                </MDBCol>
-            </MDBRow>
-        </MDBContainer>
-    );
+//                                 </div>
+//                             </div>
+//                             <div className="d-flex flex-row pb-9">
+//                                 <div className="rounded border d-flex w-100 px-3 py-2 align-items-center">
+//                                     <div className="d-flex align-items-center pe-3">
+//                                         <MDBRadio name="radioNoLabelX" id="radioNoLabel11" />
+//                                     </div>
+//                                     <div className="d-flex flex-column py-10">
+//                                         <p className="mb-1 small text-primary">Choose amount</p>
+//                                         <div className="d-flex flex-row align-items-center">
+//                                             <h6 className="mb-0 text-primary pe-1">€</h6>
+//                                             <MDBInput
+//                                                 id="typeNumber"
+//                                                 type="number"
+//                                                 size="lg"
+//                                                 style={{ width: "100px" }}
+//                                             />
+//                                         </div>
+//                                     </div>
+//                                 </div>
+
+//                             </div>
+//                             <div className="d-flex justify-content-bottom align-items-bottom pb-0">
+//                                 <br />
+//                                 <a href="#!" className="text">
+
+//                                 </a>
+//                                 <br />
+
+
+//                                 <button><Link to='/'>Pay</Link>
+//                                 </button>
+
+//                             </div>
+//                         </MDBCardBody>
+//                     </MDBCard>
+
+//                     <br />
+//                 </MDBCol>
+//                 <br />
+
+//             </MDBRow>
+//             <center><h3> THANK YOU</h3></center>
+//             <h5>Security of your payment information</h5>
+//             <p>
+//                 We understand that payment services online involves a lot of trust on your part. We take your trust seriously, and we make the security and confidentiality of your information our highest priority.</p>
+//             {/* <img src="images/Thx.jpg" className="thx" alt="" /><img src="images/Thx.jpg" className="thx" alt="" /><img src="images/Thx.jpg" className="thx" alt="" /><img src="images/Thx.jpg" className="thx" alt="" /><img src="images/Thx.jpg" className="thx" alt="" /> */}
+
+
+//         </MDBContainer>
+//     );
+// }
+import React from 'react';
+import Cards from 'react-credit-cards';
+
+export default class PaymentForm extends React.Component {
+    state = {
+        cvc: '',
+        expiry: '',
+        focus: '',
+        name: '',
+        number: '',
+    };
+
+    handleInputFocus = (e) => {
+        this.setState({ focus: e.target.name });
+    }
+
+    handleInputChange = (e) => {
+        const { name, value } = e.target;
+
+        this.setState({ [name]: value });
+    }
+
+    render() {
+        return (
+            <div id="PaymentForm">
+                <Cards
+                    cvc={this.state.cvc}
+                    expiry={this.state.expiry}
+                    focused={this.state.focus}
+                    name={this.state.name}
+                    number={this.state.number}
+                />
+                <form>
+                    <input
+                        type="tel"
+                        name="number"
+                        placeholder="Card Number"
+                        onChange={this.handleInputChange}
+                        onFocus={this.handleInputFocus}
+                    />
+                    ...
+                </form>
+            </div>
+        );
+    }
 }

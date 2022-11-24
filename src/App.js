@@ -37,7 +37,7 @@ function App() {
     {
       id: 3,
       title: "Housing",
-      body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis consequatur expedita, assumenda similique non optio! Modi nesciunt excepturi corrupti atque blanditiis quo nobis, non optio quae possimus illum exercitationem ipsa!"
+      body: "Rent support (Mietzuschuss)to help you cover regular expenses like utilities, as well as your rent.we support and walk you through how to apply for housing benefit. Our professional team of Volunteers have all the expertise and networks working with partners to settle you in a safe fully equipped house.!"
     },
 
   ])
@@ -94,7 +94,6 @@ function App() {
         </Route>
         <Route path="about" element={<About />} />
         <Route path="*" element={<Missing />} />
-        <Route path='/donate' element={<Donate />} />
       </Route>
     </Routes>
   );

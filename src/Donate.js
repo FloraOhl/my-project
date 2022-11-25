@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
 
 
+
 const Donate = () => {
     const validate = Yup.object({
         fullName: Yup.string().min(3, 'Must be 15 characters or less').max(15, 'Must be 15 characters or less')
@@ -13,6 +14,8 @@ const Donate = () => {
         password: Yup.string().min(6, 'Password must be at least 6 charaters').required('Password is required'),
         confirmPassword: Yup.string().oneOf([Yup.ref('password'), null], 'Password must match').required('Confirm password is required'),
     })
+
+
 
     return (
         <Formik
@@ -30,7 +33,7 @@ const Donate = () => {
         >
             {formik => (
                 <div>
-                    <h1 className="my-4 font-weight-bold .display-4">Donate</h1>
+                    <h1 className="my-4 font-weight-bold .display-2">Donate</h1>
                     <Form>
                         <ul>
                             <input
@@ -50,6 +53,8 @@ const Donate = () => {
                             name="card number"
                         />
                         </ul>
+
+
                         <ul><input
                             id="Expiry date"
                             class="form-field"
@@ -58,14 +63,14 @@ const Donate = () => {
                             name="Valid Thru"
                         />
                         </ul>
-                        <ul><input
+                        {/* <ul><input
                             id="CVC"
                             class="form-field"
                             type="number"
                             placeholder="CVC"
                             name="cvc"
                         />
-                        </ul>
+                        </ul> */}
 
                         <ul><input
                             id="Card Owner"
@@ -75,6 +80,7 @@ const Donate = () => {
                             name="Card Owner"
                         />
                         </ul>
+                        <br></br>
 
                         {/* <center><button className="btn btn-dark mt-3" type="submit">Donate</button></center> */}
 
@@ -84,12 +90,13 @@ const Donate = () => {
                             <button>Click</button>
                         </a> */}
 
-                        <div>
-                            <center>  <Link to='https://www.paypal.com/signin'>
-                                <button type="button" className="btn btn-info"><Link to='/'>Donate</Link></button>
-                            </Link></center>
-                            <center><img src="images/thx.jpg" className="chains" alt="" /></center>
-                        </div>
+
+                        <center>  <Link to='https://www.paypal.com/signin'>
+                            <button type="button" className="btn btn-info"><Link to='/'>Donate</Link></button>
+                        </Link></center>
+                        <p>Ⲧⲏⲁⲛⲕ ⲩⲟ𐌵!,D͖̪͜a͖̝͕n͍͍̞k̙͙̘e͉͕̫!͔̦͇ Asante!T̅a̅c̅k̅</p>
+                        {/* <center><img src="images/thx.jpg" className="chains" alt="" /></center> */}
+
 
 
                     </Form>

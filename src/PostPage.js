@@ -33,21 +33,21 @@ const PostPage = ({ posts, }) => {
                         <br></br>
                         <br></br>
                         <ul>
-                            <li>☏ call 0800-200-200</li>
+                            <li>☏ 0800-200-200</li>
                             <br></br>
-                            <li>☏<Link to='javascript:void(0)'
+                            <li>✉<Link to='javascript:void(0)'
                                 onClick={() => window.location = 'mailto:yourmail@domain.com'}>
                                 Email
                             </Link></li>
                             <br></br>
-                            <li>☏ visit our office ǀ  FREEDOMǀ  FullStack-MobileApp-Straße 5,ǀ 10243 Berlin! </li>
+                            <li>웃 visit our office ǀ  FREEDOMǀ  FullStack-MobileApp-Straße 5,ǀ 10243 Berlin! </li>
                         </ul>
 
                         <br></br>
 
                         <p>
 
-                            <Link to='/'>Back to Homepage</Link>
+                            <center><Link to='/'>Back to Homepage</Link></center>
                         </p>
                         <br></br>
 

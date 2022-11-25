@@ -1,3 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  background-color: #efefef;
+}
+
+#root {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App {
+  width: 100%;
+  max-width: 800px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid #333;
+  box-shadow: 0px 4px 40px rgb(103, 103, 224);
+
+}
+
+.Header,
+.Footer {
+  width: 100%;
+  background-color: pink;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+}
+
+.Header h1 {
+  font-size: 1.5rem;
+}
+
+.Header svg {
+  font-size: 2rem;
+}
+
+.Footer {
+  padding: 0.75rem;
+  display: grid;
+  place-content: center;
+}
+
+.Nav {
+  width: 100%;
+  background-color: pink;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 90px;
+}
+
+.searchForm {
+  width: 50%;
+  padding: 1rem 0 0 0.75rem;
+}
+
+.searchForm input[type="text"] {
+  font-family: 'Open Sans', sans-serif;
+  width: 80%;
+  min-height: 48px;
+  font-size: 1rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  outline: none;
+}
+
+.searchForm label {
+  position: absolute;
+  left: -99999px;
+}
+
+.Nav ul {
+  color: black;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.Nav li {
+  padding: 1rem;
+}
+
+.Nav li {
+  padding: 1rem;
+}
+
+.Nav li:hover,
+.Nav li:focus {
+  padding: 1rem;
+}
+
+.Nav li a {
+  color: blue;
+  text-decoration: none;
+}
+
+.Nav li:hover,
+.Nav li:focus,
+.Nav li:hover a,
+.Nav li:focus a {
+  background-color: lightslategray;
+  color: lightgrey;
+}
+
+.Nav li:hover a,
+.Nav li:focus a {
+  cursor: pointer;
+}
+
+.Home,
+.NewRequest,
+.RequestPage,
+.About,
+.Missing {
+  width: 100%;
+  flex-grow: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  background-color: pink;
+}
+
+.post {
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgb(134, 53, 53);
+}
+
+.Home .post a {
+  background-color: pink;
+}
+
+.Home .post a,
+.Home .post a:visited {
+  color: blue;
+}
+
+.post:first-child {
+  margin-top: 0;
+}
+
+.post:last-child {
+  border-bottom: none;
+  background-color: rgba(245, 245, 245, 0);
+}
+
+.About ul {
+  color: black;
+  list-style-type: none;
+  display: column;
+  flex-wrap: nowrap;
+  align-items: column;
+}
+
+.requestBody {
+  margin: 1rem 0;
+}
+
+/* @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
 button {
   height: 48px;
   min-width: 50px;
@@ -16,15 +201,8 @@ button {
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
 
-html {
-  font-size: 16px;
-}
 
-.donate {
-  background-color: pink;
 }
 
 body {
@@ -141,9 +319,24 @@ body {
   color: brown;
 }
 
-*/ * .Nav li:hover a,
+*/
+* .Nav li:hover a,
 .Nav li:focus a {
   cursor: pointer;
+}
+
+
+.PostPage ul {
+  color: black;
+  list-style-type: none;
+  display: column;
+  flex-wrap: nowrap;
+  align-items: column;
+
+}
+
+.PostPage {
+  background-color: rgba(242, 244, 246, 0.065);
 }
 
 .Home,
@@ -161,7 +354,7 @@ body {
 .request {
   margin-top: 1rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid rgb(220, 163, 163);
 }
 
 .Home .request a {
@@ -199,7 +392,7 @@ body {
 .newRequestForm textarea {
   font-family: 'Open Sans', sans-serif;
   width: 100%;
-  min-height: 80px;
+  min-height: 48px;
   font-size: 1rem;
   padding: 0.25rem;
   border-radius: 0.25rem;
@@ -208,7 +401,7 @@ body {
 }
 
 .newRequestForm textarea {
-  height: 600px;
+  height: 100px;
 }
 
 .newRequestForm button {
@@ -229,8 +422,8 @@ body {
 }
 
 .RequestPage button {
-  height: 50px;
-  min-width: 50px;
+  height: 100px;
+  min-width: 100px;
   border-radius: 0.25rem;
   padding: 0.5rem;
   font-size: 1rem;
@@ -277,6 +470,11 @@ body {
     padding: 1rem 0 0 0.75rem;
   }
 
+  /* .searchForm {
+    width: 50%;
+    padding: .5rem 0;
+  } */
+
   .searchForm input[type="text"] {
     margin-left: 0.5rem;
   }
@@ -287,28 +485,54 @@ body {
   }
 
   .newRequestForm textarea {
-    height: 20px;
+    height: 300px;
   }
 
   .newRequestForm button {
     margin-top: 1rem;
     height: 48px;
-    min-width: px;
+    width: 400px;
     border-radius: 10px;
     padding: 0.5rem;
     font-size: 1rem;
     cursor: pointer;
+    background-color: rgba(47, 101, 53, 0.524);
   }
 }
 
-.donate {
+
+.Donate {
   background-color: pink;
 }
 
 @media only screen and (min-width: 992px) {
 
-  .Header svg {
-    font-size: 3rem;
+  .Header button {
+    margin-top: 3rem;
+    position: absolute;
+    left: -99999px;
+
+
   }
 
+
+  .searchForm input[type="text"] {
+    margin-left: 0.5rem;
+  }
+
+  .searchForm label {
+    position: absolute;
+    right: -99999px;
+  }
+
+  .newRequestForm button {
+    margin-top: 1rem;
+    height: 48px;
+    width: 400px;
+    border-radius: 10px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: rgba(47, 101, 53, 0.524);
+  }
 }

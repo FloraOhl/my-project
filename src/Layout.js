@@ -6,7 +6,7 @@ import { Outlet } from 'react-router-dom';
 const Layout = ({ search, setSearch }) => {
     return (
         <div className="App">
-            <Header title="Freedom" />
+            <Header title="F̅r̅e̅e̅d̅o̅m̅" />
             <Nav search={search} setSearch={setSearch} />
             <Outlet />
             <Footer />
